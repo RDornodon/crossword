@@ -4,7 +4,7 @@ from random import choice
 if __name__ == '__main__':
     with open('words_dictionary.json', 'r') as j:
         words = [*json.load(j)]
-    name = input('What is your name?')
+    name = input('What is your name?\n')
     name = [c for c in name.lower() if c in 'abcdefghijklmnopqrstuvwxyz']
     puzzle = []
     pos = 0
@@ -15,4 +15,4 @@ if __name__ == '__main__':
         puzzle += [[word, marker]]
         pos = max(pos, marker)
     for word, marker in puzzle:
-        print(' '*(pos-marker)+word)
+        print(' ' * (pos - marker) + word)
